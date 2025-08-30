@@ -1,4 +1,6 @@
 from flask import Flask
+
+from app.routes.health import health_bp
 from app.routes.mail_routes import mail_bp
 from flask_cors import CORS  # Import CORS
 
@@ -14,5 +16,7 @@ def create_app():
 
     # Register Blueprints (Routes)
     app.register_blueprint(mail_bp)
+    app.register_blueprint(health_bp)
+
 
     return app
